@@ -27,7 +27,7 @@ export default function Home() {
       {/* top bar nav */}
       <nav className={`flex flex-row justify-between items-center gap-3 fixed w-full h-20  backdrop-blur-xl z-20 p-3 transition-color duration-700 ease-in-out ${showNav ? "bg-blue-900  opacity-100" : "-bg-transparent opacity-100" }`}>
         <div className="flex flex-row h-full w-3/4 items-center gap-3">
-          <img src="/background/back.jpg" className="w-12 h-12 rounded-full ml-3" alt=""/>
+          <img src="/background/logo.jpg" className="w-15 h-12 ml-3" alt=""/>
           <div className="flex flex-row w-3/4 h-full items-center">
             <h2 className="text-gray-300 ml-3 text-lg font-semibold font-serif ">SMCT EVENTS</h2>
           </div>
@@ -116,6 +116,9 @@ export default function Home() {
           quia, earum tempore!
           </p>
     </div>
+    <footer className="w-full h-50 bg-blue-900 flex items-center justify-center mt-50">
+      <p className="text-white">© 2025 SMCT Event. All rights reserved.</p>
+    </footer>
     </div>
   );
 }

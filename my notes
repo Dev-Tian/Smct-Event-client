@@ -1,0 +1,79 @@
+https://heroicons.com/ for svg icons
+aos in auto fade on scroll 
+flat-icon for icon also  animated icons
+
+
+fullcalendar in calendar
+{
+  id: 1,
+  title: "Single Day Event",
+  start: "2025-11-20T11:00:00",
+  end: "2025-11-20T12:00:00",
+  description: "Meeting with team",
+  userId: 5
+}
+
+
+//example component
+'use client';
+import { useEffect, useState } from 'react';
+import FullCalendar, { EventClickArg } from '@fullcalendar/react';
+import dayGridPlugin from '@fullcalendar/daygrid';
+import timeGridPlugin from '@fullcalendar/timegrid';
+import axios from 'axios';
+import EventModal from './EventModal'; // your custom modal component
+
+interface EventType {
+  id: number;
+  title: string;
+  start: string;
+  end?: string;
+  description?: string;
+}
+
+export default function CalendarPage() {
+  const [events, setEvents] = useState<EventType[]>([]);
+  const [selectedEvent, setSelectedEvent] = useState<EventType | null>(null);
+
+  // Fetch events from Laravel API
+  useEffect(() => {
+    axios.get<EventType[]>('/api/events') // your Laravel endpoint
+      .then(res => setEvents(res.data))
+      .catch(err => console.error(err));
+  }, []);
+
+  const handleEventClick = (clickInfo: EventClickArg) => {
+    const event = events.find(e => e.id.toString() === clickInfo.event.id);
+    if (event) {
+      setSelectedEvent(event);
+    }
+  };
+
+  return (
+    <div>
+     <FullCalendar
+        plugins={[dayGridPlugin, timeGridPlugin]}
+        initialView="dayGridMonth"
+        headerToolbar={{
+            left: 'prev,next today',
+            center: 'title',
+            right: 'dayGridMonth,timeGridWeek,timeGridDay'
+        }}
+        events={events}
+        eventClick={handleEventClick}
+        editable={false} // disable drag for mobile
+        dayMaxEvents={true} // collapse long days into "+N more"
+        height="auto" // adjusts height to content
+        />
+
+
+      {/* Modal to display event details */}
+      {selectedEvent && (
+        <EventModal
+          event={selectedEvent}
+          onClose={() => setSelectedEvent(null)}
+        />
+      )}
+    </div>
+  );
+}
