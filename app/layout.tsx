@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import NavBAr from "./navComponent";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,7 +28,13 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <NavBAr />
         {children}
+        <script>
+          console.log("%cWelcome to SMCT Event!","font-family: Courier New,
+          Courier, monospace; color: #00ff00; background: #000; text-shadow: 0 0
+          5px #00ff00; font-size: 20px;");
+        </script>
       </body>
     </html>
   );
