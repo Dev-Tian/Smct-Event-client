@@ -7,15 +7,22 @@ import {
   Carousel,
   CarouselContent,
   CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
+} from "../components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
+import Loading from "../components/loading";
 
 export default function Home() {
   const [mounted, setMounted] = useState(false);
+  const [isLoad, setIsLoad] = useState(false);
+
+  async function load() {
+    setIsLoad(true);
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+    setIsLoad(false);
+  }
 
   useEffect(() => {
+    load();
     setMounted(true);
     AOS.init({ duration: 800 });
   }, []);
@@ -24,6 +31,7 @@ export default function Home() {
 
   return (
     <div>
+      {isLoad && <Loading classname="inset-0" />}
       <div className="relative inset-0 w-full h-screen">
         <div className="absolute inset-0 z-10 w-full h-screen bg-gray-500 opacity-50"></div>
 
@@ -53,7 +61,6 @@ export default function Home() {
           </CarouselContent>
         </Carousel>
       </div>
-
       <div className="p-8 mt-20" id="about">
         <h2
           className="mb-4 text-2xl font-semibold"
@@ -65,7 +72,6 @@ export default function Home() {
           Lorem ipsum dolor sit amet consectetur adipisicing elit...
         </p>
       </div>
-
       <footer className="flex items-center justify-center w-full bg-blue-900 h-50 mt-50">
         <p className="text-white">© 2025 SMCT Event. All rights reserved.</p>
       </footer>
