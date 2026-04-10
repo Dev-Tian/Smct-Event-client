@@ -28,12 +28,8 @@ export default function GlobalNotFound() {
               <h1 className="mt-2 font-serif text-6xl italic font-bold">
                 Page
               </h1>
+              <h1 className="mt-2 font-serif text-6xl italic font-bold">Not</h1>
               <h1 className="mt-2 font-serif text-6xl italic font-bold">
-                {" "}
-                Not
-              </h1>
-              <h1 className="mt-2 font-serif text-6xl italic font-bold">
-                {" "}
                 Found
               </h1>
               <Button

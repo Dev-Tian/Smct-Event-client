@@ -36,8 +36,8 @@ export default function NavComponent() {
     <div>
       {/* top bar nav */}
       <nav
-        className={`flex z-30 shadow-lg flex-row justify-between items-center gap-3 fixed w-full h-1/10  backdrop-blur-2xl p-3 transition-color duration-700 ease-in-out ${
-          showNav ? "bg-blue-900  opacity-100" : "-bg-transparent opacity-100"
+        className={`flex z-30 border-b-gray-600 border-b-1 flex-row justify-between items-center gap-3 fixed w-full h-1/10 p-3 transition-color duration-700 ease-in-out ${
+          showNav ? "bg-white  opacity-100" : "bg-black-50/50 opacity-100"
         }`}
       >
         <div className="flex flex-row items-center w-3/4 h-full gap-3">
@@ -45,8 +45,8 @@ export default function NavComponent() {
           <img src="/background/logo.jpg" className="h-12 ml-5 w-15" alt="" />
           <div className="flex flex-row items-center w-3/4 h-full">
             <h2
-              className={`ml-3 font-serif text-lg font-semibold text-gray-100 ${
-                showNav ? "text-gray-200" : "text-white"
+              className={`ml-3 font-serif text-lg font-semibold  ${
+                showNav ? "text-black" : "text-white"
               } `}
             >
               SMCT EVENTS
@@ -55,10 +55,10 @@ export default function NavComponent() {
         </div>
         <div
           className={`flex-row items-center justify-start hidden w-1/4 h-full gap-5 font-sans text-xl lg:flex xl:flex 2xl:flex me-5 ${
-            showNav ? "text-gray-200" : "text-white"
+            showNav ? "text-black" : "text-white"
           }`}
         >
-          <a className="cursor-pointer" onClick={() => router.push("/")}>
+          <a className="cursor-pointer" onClick={() => router.push("/#home")}>
             Home
           </a>
           <a href="/#about">About</a>
@@ -188,7 +188,7 @@ export default function NavComponent() {
             <li className="mb-2">
               <button
                 onClick={() => {
-                  router.push("/");
+                  router.push("/#home");
                   setShowSideNav(false);
                 }}
               >
