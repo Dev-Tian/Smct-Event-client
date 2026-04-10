@@ -36,7 +36,7 @@ export default function NavComponent() {
     <div>
       {/* top bar nav */}
       <nav
-        className={`flex z-30 border-b-gray-600 border-b-1 flex-row justify-between items-center gap-3 fixed w-full h-1/10 p-3 transition-color duration-700 ease-in-out ${
+        className={`flex z-30 border-b-gray-600 border-b flex-row justify-between items-center gap-3 fixed w-full h-1/10 p-3 transition-color duration-700 ease-in-out ${
           showNav ? "bg-white  opacity-100" : "bg-black-50/50 opacity-100"
         }`}
       >

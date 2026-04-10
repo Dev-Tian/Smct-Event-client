@@ -17,7 +17,7 @@ export default function GlobalNotFound() {
   return (
     <html lang="en" className={inter.className}>
       <body>
-        <div className="flex items-center justify-center w-full h-screen bg-gradient-to-b from-slate-100 to-orange-200">
+        <div className="flex items-center justify-center w-full h-screen bg-linear-to-b from-slate-100 to-orange-200">
           <div className="flex items-center justify-center w-3/4 gap-7 h-3/4">
             <img
               className="w-100"
