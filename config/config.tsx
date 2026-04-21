@@ -1,4 +1,10 @@
 export const CONFIG = {
-    API_URL: process.env.NEXT_PUBLIC_API_URL,
-    STORAGE_URL: process.env.NEXT_PUBLIC_STORAGE_URL
-}
+  API_URL: process.env.NEXT_PUBLIC_API_BASE_URL,
+  SANCTUM_URL: process.env.NEXT_PUBLIC_SANCTUM_URL,
+  STORAGE_URL: process.env.NEXT_PUBLIC_STORAGE_URL,
+
+  REVERB_APP_KEY: process.env.NEXT_PUBLIC_REVERB_APP_KEY!,
+  REVERB_HOST: process.env.NEXT_PUBLIC_REVERB_HOST ?? "127.0.0.1",
+  REVERB_PORT: Number(process.env.NEXT_PUBLIC_REVERB_PORT) ?? 8080,
+  REVERB_AUTH_END_POINT: `${process.env.NEXT_PUBLIC_API_BASE_URL}/broadcasting/auth`,
+};

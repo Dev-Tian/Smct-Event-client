@@ -50,105 +50,110 @@ export default function Home() {
     //   </div>
     //
     // </div>
-    <div className="relative">
-      {/* Sticky section */}
-      <div
-        className="sticky top-0 w-full h-screen bg-center bg-cover"
-        style={
-          {
-            // backgroundImage: "url('/background/home-bg.jpg')",
+    <>
+      {isLoad && <Loading classname="inset-0" />}
+      <div className="relative">
+        {/* Sticky section */}
+        <div
+          className="sticky top-0 w-full h-screen bg-center bg-cover"
+          style={
+            {
+              // backgroundImage: "url('/background/home-bg.jpg')",
+            }
           }
-        }
-      >
-        {/* Overlay INSIDE sticky */}
-        <div className="absolute z-50 w-full">
-          <h1 className="text-5xl font-bold text-center text-white mt-80">
-            WE ARE A FULL SERVICE DIGITAL COMPANY
-          </h1>
-          <p className="mt-1 text-center text-white">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim
-            deleniti maio. Earum...
-          </p>
-        </div>
-        <Carousel
-          plugins={[Autoplay({ delay: 4000, stopOnInteraction: false })]}
-          className="w-full h-screen"
         >
-          <CarouselContent>
-            <CarouselItem>
-              <div className="absolute w-full h-screen bg-black/20"></div>
-              <div
-                className="w-full h-screen bg-center bg-cover"
-                style={{ backgroundImage: "url('/background/back1.jpg')" }}
-              ></div>
-            </CarouselItem>
-            <CarouselItem>
-              <div className="absolute w-full h-screen bg-black/20"></div>
-              <div
-                className="w-full h-screen bg-center bg-cover"
-                style={{ backgroundImage: "url('/background/home-bg.jpg')" }}
-              ></div>
-            </CarouselItem>
-            <CarouselItem>
-              <div className="absolute w-full h-screen bg-black/20"></div>
-              <div
-                className="w-full h-screen bg-center bg-cover"
-                style={{ backgroundImage: "url('/background/back2.jpg')" }}
-              ></div>
-            </CarouselItem>
-          </CarouselContent>
-        </Carousel>
-      </div>
-
-      {/* Scroll content */}
-      <div className="relative z-10 flex justify-center w-full bg-white">
-        <div className="w-5/6 bg-white rounded-xl mt-[-130] p-5 shadow-2xl mb-20">
-          <h1
-            className="mt-25 mb-10 text-5xl font-extrabold text-center font-[cursive]"
-            data-aos={mounted ? "fade" : undefined}
+          {/* Overlay INSIDE sticky */}
+          <div className="absolute z-50 w-full">
+            <h1 className="text-5xl font-bold text-center text-white mt-80">
+              WE ARE A FULL SERVICE DIGITAL COMPANY
+            </h1>
+            <p className="mt-1 text-center text-white">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim
+              deleniti maio. Earum...
+            </p>
+          </div>
+          <Carousel
+            plugins={[Autoplay({ delay: 4000, stopOnInteraction: false })]}
+            className="w-full h-screen"
           >
-            TITTLE
-          </h1>
-          <p data-aos={mounted ? "fade" : undefined}>
-            Lorem ipsum dolor sit amet... Lorem ipsum dolor sit amet consectetur
-            adipisicing elit. Placeat voluptate alias nulla commodi, quae optio
-            ab aliquam veniam esse adipisci dolores! Lorem ipsum dolor sit
-            amet... Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Placeat voluptate alias nulla commodi, quae optio ab consequuntur
-            ipsa, asperiores voluptates quod ex quis magnam fugit aliquam veniam
-            esse Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Placeat voluptate alias nulla commodi, quae optio ab consequuntur
-            ipsa, asperiores voluptates quod ex quis magnam fugit aliquam veniam
-            esse adipisci dolores! Lorem ipsum dolor sit amet... Lorem ipsum
-            dolor sit amet consectetur adipisicing elit. Placeat voluptate alias
-            nulla commodi, quae optio ab consequuntur ipsa, asperiores
-            voluptates quod ex quis magnam fugit aliquam veniam esse adipisci
-            dolores! Lorem ipsum dolor sit amet... Lorem ipsum dolor sit amet
-            consectetur adipisicing asperiores voluptates quod ex quis magnam
-            fugit aliquam veniam esse adipisci dolores! Lorem ipsum dolor sit
-            amet... Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Placeat voluptate alias nulla commodi, quae optio ab consequuntur
-            ipsa, asperiores voluptates quod ex quis magnam fugit aliquam veniam
-            esse adipisci dolores! Lorem ipsum dolor sit amet... Lorem ipsum
-            dolor sit amet consectetur adipisicing elit. Placeat voluptate alias
-            nulla commodi, quae optio ab consequuntur ipsa, asperiores
-            voluptates quod ex quis magnam fugit aliquam veniam esse adipisci
-            dolores! Lorem ipsum dolor sit amet... Lorem ipsum dolor sit amet
-            consectetur adipisicing elit. Placeat voluptate alias nulla commodi,
-            quae optio ab consequuntur ipsa, asperiores voluptates quod ex quis
-            magnam fugit aliquam veniam esse adipisci dolores! Lorem ipsum dolor
-            sit amet... Lorem ipsum dolor sit consequuntur ipsa, asperiores
-            voluptates quod ex quis magnam fugit aliquam veniam esse adipisci
-            dolores! Lorem ipsum dolor sit amet... Lorem ipsum dolor sit amet
-            consectetur adipisicing elit. Placeat voluptate alias nulla commodi,
-            quae optio ab consequuntur ipsa, asperiores voluptates quod ex quis
-            magnam fugit aliquam veniam esse adipisci dolores!
-          </p>
+            <CarouselContent>
+              <CarouselItem>
+                <div className="absolute w-full h-screen bg-black/20"></div>
+                <div
+                  className="w-full h-screen bg-center bg-cover"
+                  style={{ backgroundImage: "url('/background/back1.jpg')" }}
+                ></div>
+              </CarouselItem>
+              <CarouselItem>
+                <div className="absolute w-full h-screen bg-black/20"></div>
+                <div
+                  className="w-full h-screen bg-center bg-cover"
+                  style={{ backgroundImage: "url('/background/home-bg.jpg')" }}
+                ></div>
+              </CarouselItem>
+              <CarouselItem>
+                <div className="absolute w-full h-screen bg-black/20"></div>
+                <div
+                  className="w-full h-screen bg-center bg-cover"
+                  style={{ backgroundImage: "url('/background/back2.jpg')" }}
+                ></div>
+              </CarouselItem>
+            </CarouselContent>
+          </Carousel>
+        </div>
+
+        {/* Scroll content */}
+        <div className="relative z-10 flex justify-center w-full bg-white">
+          <div className="w-5/6 bg-white rounded-xl mt-[-130] p-5 shadow-2xl mb-20">
+            <h1
+              className="mt-25 mb-10 text-5xl font-extrabold text-center font-[cursive]"
+              data-aos={mounted ? "fade" : undefined}
+            >
+              TITTLE
+            </h1>
+            <p data-aos={mounted ? "fade" : undefined}>
+              Lorem ipsum dolor sit amet... Lorem ipsum dolor sit amet
+              consectetur adipisicing elit. Placeat voluptate alias nulla
+              commodi, quae optio ab aliquam veniam esse adipisci dolores! Lorem
+              ipsum dolor sit amet... Lorem ipsum dolor sit amet consectetur
+              adipisicing elit. Placeat voluptate alias nulla commodi, quae
+              optio ab consequuntur ipsa, asperiores voluptates quod ex quis
+              magnam fugit aliquam veniam esse Lorem ipsum dolor sit amet
+              consectetur adipisicing elit. Placeat voluptate alias nulla
+              commodi, quae optio ab consequuntur ipsa, asperiores voluptates
+              quod ex quis magnam fugit aliquam veniam esse adipisci dolores!
+              Lorem ipsum dolor sit amet... Lorem ipsum dolor sit amet
+              consectetur adipisicing elit. Placeat voluptate alias nulla
+              commodi, quae optio ab consequuntur ipsa, asperiores voluptates
+              quod ex quis magnam fugit aliquam veniam esse adipisci dolores!
+              Lorem ipsum dolor sit amet... Lorem ipsum dolor sit amet
+              consectetur adipisicing asperiores voluptates quod ex quis magnam
+              fugit aliquam veniam esse adipisci dolores! Lorem ipsum dolor sit
+              amet... Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Placeat voluptate alias nulla commodi, quae optio ab consequuntur
+              ipsa, asperiores voluptates quod ex quis magnam fugit aliquam
+              veniam esse adipisci dolores! Lorem ipsum dolor sit amet... Lorem
+              ipsum dolor sit amet consectetur adipisicing elit. Placeat
+              voluptate alias nulla commodi, quae optio ab consequuntur ipsa,
+              asperiores voluptates quod ex quis magnam fugit aliquam veniam
+              esse adipisci dolores! Lorem ipsum dolor sit amet... Lorem ipsum
+              dolor sit amet consectetur adipisicing elit. Placeat voluptate
+              alias nulla commodi, quae optio ab consequuntur ipsa, asperiores
+              voluptates quod ex quis magnam fugit aliquam veniam esse adipisci
+              dolores! Lorem ipsum dolor sit amet... Lorem ipsum dolor sit
+              consequuntur ipsa, asperiores voluptates quod ex quis magnam fugit
+              aliquam veniam esse adipisci dolores! Lorem ipsum dolor sit
+              amet... Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Placeat voluptate alias nulla commodi, quae optio ab consequuntur
+              ipsa, asperiores voluptates quod ex quis magnam fugit aliquam
+              veniam esse adipisci dolores!
+            </p>
+          </div>
+        </div>
+        <div className="relative z-50 flex items-center justify-center w-full bg-blue-900 h-50">
+          <p className="text-white">© 2025 SMCT Event. All rights reserved.</p>
         </div>
       </div>
-      <div className="relative z-50 flex items-center justify-center w-full bg-blue-900 h-50">
-        <p className="text-white">© 2025 SMCT Event. All rights reserved.</p>
-      </div>
-    </div>
+    </>
   );
 }

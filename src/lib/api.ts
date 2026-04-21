@@ -1,4 +1,4 @@
-import { CONFIG } from "../../config/config";
+import { CONFIG } from "@/config/config";
 import axios from "axios";
 
 const api = axios.create({
@@ -6,9 +6,9 @@ const api = axios.create({
   withCredentials: true,
   withXSRFToken: true,
   headers: {
-    "Content-Type": undefined,
-    "X-Requested-With": "XMLHttpRequest",
     Accept: "application/json",
+    "X-Requested-With": "XMLHttpRequest",
+    "Content-Type": undefined,
   },
 });
 
@@ -16,21 +16,21 @@ api.interceptors.response.use(
   (response) => response,
   (error) => {
     if (error.code === "ECONNABORTED") {
-      console.error("Request timed out");
+      console.error("Timeout error");
     }
 
     return Promise.reject(error);
-  }
+  },
 );
 
 const sanctum = axios.create({
-  baseURL: CONFIG.API_URL,
+  baseURL: CONFIG.SANCTUM_URL,
   withCredentials: true,
   withXSRFToken: true,
   headers: {
-    "Content-Type": undefined,
-    "X-Requested-With": "XMLHttpRequest",
     Accept: "application/json",
+    "X-Requested-With": "XMLHttpRequest",
+    "Content-Type": undefined,
   },
 });
 

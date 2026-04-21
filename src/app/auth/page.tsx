@@ -1,12 +1,15 @@
 "use client";
+
 import { useEffect, useState } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
+import { getEcho } from "@/src/lib/echoPublic";
 
 export default function AuthPage() {
   const [isLogin, setIsLogin] = useState(true);
   const router = useRouter();
   const query = useSearchParams();
   const mode = query.get("mode");
+
   useEffect(() => {
     if (mode === "login") {
       setIsLogin(true);
@@ -23,6 +26,18 @@ export default function AuthPage() {
     // }catch(){
     // }
   };
+
+  useEffect(() => {
+    const echo = getEcho();
+    if (!echo) return;
+    const mountEcho = async () => {
+      echo.channel("test").listen(".test", (e: any) => {
+        console.log(e);
+      });
+    };
+    mountEcho();
+  }, []);
+
   return (
     <div
       className={`relative flex items-center justify-center h-screen overflow-hidden bg-center bg-cover bg-linear-to-tl from-cyan-500 via-gray-300 to-sky-700`}
